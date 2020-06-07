@@ -1,4 +1,5 @@
-﻿using BretEShop.Core.Models;
+﻿using BretEShop.Core.Contracts;
+using BretEShop.Core.Models;
 using BretEShop.DataAccess.InMemory;
 using System;
 using System.Collections.Generic;
@@ -11,10 +12,10 @@ namespace Bret.DataAccess.Web.Controllers
     public class ProductCategoryManagerController : Controller
     {
 
-        InMemoryRepository<ProductCategory> context;
-        public ProductCategoryManagerController()
+        IRepository<ProductCategory> context;
+        public ProductCategoryManagerController(IRepository<ProductCategory> context)
         {
-            context = new InMemoryRepository<ProductCategory>();
+            this.context = context;
         }
         // GET: ProductCategoryManager
         public ActionResult Index()

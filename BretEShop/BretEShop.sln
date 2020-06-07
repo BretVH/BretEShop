@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BretEShop.DataAccess.SQL", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BretEShop.DataAccess.InMemory", "BretEShop.DataAccess.InMemory\BretEShop.DataAccess.InMemory.csproj", "{A06670E8-5928-4D45-8D24-2C2E17118C39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bret.DataAccess.Web", "Bret.DataAccess.Web\Bret.DataAccess.Web.csproj", "{34C102D1-6D74-4A26-8166-5028DA6169BC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bret.Web", "Bret.DataAccess.Web\Bret.Web.csproj", "{34C102D1-6D74-4A26-8166-5028DA6169BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bret.DataAccess.Web.Tests", "Bret.DataAccess.Web.Tests\Bret.DataAccess.Web.Tests.csproj", "{E2673A72-7769-46C0-B414-5AD75781E582}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bret.Web.Tests", "Bret.DataAccess.Web.Tests\Bret.Web.Tests.csproj", "{E2673A72-7769-46C0-B414-5AD75781E582}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BretEShop.Services", "BretEShop.Services\BretEShop.Services.csproj", "{0FB84B12-96F1-4BCD-91D1-F4753BEEC881}"
 EndProject

@@ -8,17 +8,18 @@ using BretEShop.Core;
 using Microsoft.Ajax.Utilities;
 using BretEShop.Core.Models;
 using BretEShop.Core.ViewModels;
+using BretEShop.Core.Contracts;
 
 namespace Bret.DataAccess.Web.Controllers
 {
     public class ProductManagerController : Controller
     {
-        InMemoryRepository<Product> context;
-        InMemoryRepository<ProductCategory> productCategoriesContext;
-        public ProductManagerController()
+        IRepository<Product> context;
+        IRepository<ProductCategory> productCategoriesContext;
+        public ProductManagerController(IRepository<Product> context, IRepository<ProductCategory> productCategoriesContext)
         {
-            context = new InMemoryRepository<Product>();
-            productCategoriesContext = new InMemoryRepository<ProductCategory>();
+            this.context = context;
+            this.productCategoriesContext = productCategoriesContext;
         }
         // GET: ProductManager
         public ActionResult Index()

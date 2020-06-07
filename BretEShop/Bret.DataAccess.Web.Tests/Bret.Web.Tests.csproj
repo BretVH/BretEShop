@@ -99,9 +99,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Bret.DataAccess.Web\Bret.DataAccess.Web.csproj">
+    <ProjectReference Include="..\Bret.DataAccess.Web\Bret.Web.csproj">
       <Project>{34C102D1-6D74-4A26-8166-5028DA6169BC}</Project>
-      <Name>Bret.DataAccess.Web</Name>
+      <Name>Bret.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

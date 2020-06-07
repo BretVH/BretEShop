@@ -1,4 +1,5 @@
-﻿using BretEShop.Core.Models;
+﻿using BretEShop.Core.Contracts;
+using BretEShop.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,9 @@ using System.Threading.Tasks;
 
 namespace BretEShop.DataAccess.InMemory
 {
-    public class InMemoryRepository<T> where T : BaseEntity
+    public class InMemoryRepository<T> : IRepository<T> where T : BaseEntity
     {
-        ObjectCache cache =  MemoryCache.Default;
+        ObjectCache cache = MemoryCache.Default;
         List<T> items;
         string className;
 
@@ -21,7 +22,7 @@ namespace BretEShop.DataAccess.InMemory
             className = typeof(T).Name;
             items = cache[className] as List<T>;
 
-            if(items == null)
+            if (items == null)
             {
                 items = new List<T>();
             }
@@ -41,7 +42,7 @@ namespace BretEShop.DataAccess.InMemory
         {
             T itemToUpdate = Find(t.Id);
 
-            if(itemToUpdate != null)
+            if (itemToUpdate != null)
             {
                 itemToUpdate = t;
             }
@@ -69,7 +70,7 @@ namespace BretEShop.DataAccess.InMemory
         public void Delete(string Id)
         {
             T t = Find(Id);
-            if(t != null)
+            if (t != null)
                 items.Remove(t);
             else
                 throw new Exception(className + " Not found");

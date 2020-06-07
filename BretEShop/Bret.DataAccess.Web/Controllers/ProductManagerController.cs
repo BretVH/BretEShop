@@ -7,27 +7,33 @@ using BretEShop.DataAccess.InMemory;
 using BretEShop.Core;
 using Microsoft.Ajax.Utilities;
 using BretEShop.Core.Models;
+using BretEShop.Core.ViewModels;
 
 namespace Bret.DataAccess.Web.Controllers
 {
     public class ProductManagerController : Controller
     {
         ProductRepository context;
+        ProductCategoryRepository productCategoriesContext;
         public ProductManagerController()
         {
-            context = new ProductRepository(); 
+            context = new ProductRepository();
+            productCategoriesContext = new ProductCategoryRepository();
         }
         // GET: ProductManager
         public ActionResult Index()
         {
             List <Product> products = context.GetProducts().ToList();
+
             return View(products);
         }
 
         public ActionResult Create()
         {
-            Product product = new Product();
-            return View(product);
+            ProductManagerViewModel viewModel = new ProductManagerViewModel();
+            viewModel.Product = new Product();
+            viewModel.ProductCategories = productCategoriesContext.GetProductCategories();
+            return View(viewModel);
         }
 
         [HttpPost]
@@ -55,7 +61,11 @@ namespace Bret.DataAccess.Web.Controllers
             }
             else
             {
-                return View(product);
+                ProductManagerViewModel viewModel = new ProductManagerViewModel();
+                viewModel.Product = product;
+                viewModel.ProductCategories = productCategoriesContext.GetProductCategories();
+                
+                return View(viewModel);
             }
         }
 

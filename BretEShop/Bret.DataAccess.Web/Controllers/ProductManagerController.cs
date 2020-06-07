@@ -13,17 +13,17 @@ namespace Bret.DataAccess.Web.Controllers
 {
     public class ProductManagerController : Controller
     {
-        ProductRepository context;
-        ProductCategoryRepository productCategoriesContext;
+        InMemoryRepository<Product> context;
+        InMemoryRepository<ProductCategory> productCategoriesContext;
         public ProductManagerController()
         {
-            context = new ProductRepository();
-            productCategoriesContext = new ProductCategoryRepository();
+            context = new InMemoryRepository<Product>();
+            productCategoriesContext = new InMemoryRepository<ProductCategory>();
         }
         // GET: ProductManager
         public ActionResult Index()
         {
-            List <Product> products = context.GetProducts().ToList();
+            List <Product> products = context.GetItems().ToList();
 
             return View(products);
         }
@@ -32,7 +32,7 @@ namespace Bret.DataAccess.Web.Controllers
         {
             ProductManagerViewModel viewModel = new ProductManagerViewModel();
             viewModel.Product = new Product();
-            viewModel.ProductCategories = productCategoriesContext.GetProductCategories();
+            viewModel.ProductCategories = productCategoriesContext.GetItems();
             return View(viewModel);
         }
 
@@ -63,7 +63,7 @@ namespace Bret.DataAccess.Web.Controllers
             {
                 ProductManagerViewModel viewModel = new ProductManagerViewModel();
                 viewModel.Product = product;
-                viewModel.ProductCategories = productCategoriesContext.GetProductCategories();
+                viewModel.ProductCategories = productCategoriesContext.GetItems();
                 
                 return View(viewModel);
             }

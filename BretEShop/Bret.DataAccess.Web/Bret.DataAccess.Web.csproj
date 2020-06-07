@@ -121,6 +121,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductManagerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -162,6 +163,10 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\ProductManager\Create.cshtml" />
+    <Content Include="Views\ProductManager\Index.cshtml" />
+    <Content Include="Views\ProductManager\Edit.cshtml" />
+    <Content Include="Views\ProductManager\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -179,6 +184,24 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.5.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.5.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BretEShop.Core\BretEShop.Core.csproj">
+      <Project>{17f82908-17fd-4e03-9e77-97619ca18e21}</Project>
+      <Name>BretEShop.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BretEShop.DataAccess.InMemory\BretEShop.DataAccess.InMemory.csproj">
+      <Project>{a06670e8-5928-4d45-8d24-2c2e17118c39}</Project>
+      <Name>BretEShop.DataAccess.InMemory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BretEShop.DataAccess.SQL\BretEShop.DataAccess.SQL.csproj">
+      <Project>{8fffb8ea-6ab0-4ad5-8190-8fb55c78ac34}</Project>
+      <Name>BretEShop.DataAccess.SQL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BretEShop.Services\BretEShop.Services.csproj">
+      <Project>{0fb84b12-96f1-4bcd-91d1-f4753beec881}</Project>
+      <Name>BretEShop.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

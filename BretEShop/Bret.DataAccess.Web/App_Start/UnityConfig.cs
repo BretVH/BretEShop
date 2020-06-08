@@ -2,6 +2,7 @@ using BretEShop.Core.Contracts;
 using BretEShop.Core.Models;
 using BretEShop.DataAccess.InMemory;
 using BretEShop.DataAccess.SQL;
+using BretEShop.Services;
 using System;
 
 using Unity;
@@ -48,6 +49,9 @@ namespace Bret.DataAccess.Web
             // container.RegisterType<IProductRepository, ProductRepository>();
             container.RegisterType<IRepository<Product>, SQLRepository<Product>>();
             container.RegisterType<IRepository<ProductCategory>, SQLRepository<ProductCategory>>();
+            container.RegisterType<IRepository<Basket>, SQLRepository<Basket>>();
+            container.RegisterType<IRepository<BasketItem>, SQLRepository<BasketItem>>();
+            container.RegisterType<IBasketService, BasketService>();
         }
     }
 }

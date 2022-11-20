@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{17F82908-17FD-4E03-9E77-97619CA18E21}</ProjectGuid>
+    <ProjectGuid>{0FB84B12-96F1-4BCD-91D1-F4753BEEC881}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BretEShop.Core</RootNamespace>
-    <AssemblyName>BretEShop.Core</AssemblyName>
+    <RootNamespace>BretEShop.Services</RootNamespace>
+    <AssemblyName>BretEShop.Services</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -32,7 +32,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
@@ -43,18 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contracts\IBasketService.cs" />
-    <Compile Include="Contracts\IRepository.cs" />
-    <Compile Include="Models\BaseEntity.cs" />
-    <Compile Include="Models\Basket.cs" />
-    <Compile Include="Models\BasketItem.cs" />
-    <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\ProductCategory.cs" />
+    <Compile Include="BasketService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\BasketItemViewModel.cs" />
-    <Compile Include="ViewModels\BasketSummaryViewModel.cs" />
-    <Compile Include="ViewModels\ProductListViewModel.cs" />
-    <Compile Include="ViewModels\ProductManagerViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BretEShop.Core\BretEShop.Core.csproj">
+      <Project>{17f82908-17fd-4e03-9e77-97619ca18e21}</Project>
+      <Name>BretEShop.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

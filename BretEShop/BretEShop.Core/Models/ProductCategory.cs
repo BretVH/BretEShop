@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BretEShop.DataAccess.InMemory
+namespace BretEShop.Core.Models
 {
-    public class Class1
+    public class ProductCategory : BaseEntity
     {
+        public string Category { get; set; }
     }
 }
